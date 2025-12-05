@@ -9,7 +9,7 @@ A medida que avance, iré modificando, ampliando y creando mis propios proyectos
 Primer proyecto básico de React **sin Vite**, usando únicamente archivos locales, siguiendo el tutorial de supersimplydev.  
 Ideal para entender los fundamentos: JSX, componentes y renderizado inicial.
 
-### 2. `react-basics-vite`
+### 2. `chatbot-project`
 Mismo proyecto que el anterior, pero usando **Vite** y un entorno más profesional con gestión de dependencias mediante `node_modules`.
 
 ### 3. `ecommerce-page`
