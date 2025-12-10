@@ -1,5 +1,5 @@
+import { Header } from "../components/headerComponent";
 import "./HomePage.css";
-import "./header.css";
 
 export function HomePage() {
   return (
@@ -33,7 +33,7 @@ export function HomePage() {
           </a>
         </div>
       </div> */}
-
+      <Header />
       <div className="home-page">
         <div className="products-grid">
           <div className="product-container">
