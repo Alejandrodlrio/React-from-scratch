@@ -5,7 +5,7 @@ export function HomePage() {
   return (
     <>
       <title>Ecommerce</title>
-      <div className="header">
+      {/* <div className="header">
         <div className="left-section">
           <a href="/" className="header-link">
             <img className="logo" src="images/logo-white.png" />
@@ -32,7 +32,7 @@ export function HomePage() {
             <div className="cart-text">Cart</div>
           </a>
         </div>
-      </div>
+      </div> */}
 
       <div className="home-page">
         <div className="products-grid">
