@@ -1,21 +1,39 @@
 import { Header } from "../components/headerComponent";
 import "./HomePage.css";
 import { products } from "../starting-code/data/products";
-
+import axios from "axios";
 export function HomePage() {
-  fetch("http://localhost:3000/api/products") //tarda un tiempo en sincronizarse: devuelve una promesa
-    .then((response) => {
-      //promesa y la guarda en una respuesta
-      // response
-      //   .json() //json tambien es asincrono
-      //   .then((data) => {
-      //     console.log(data);
-      //   });
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    });
+  /*******
+   *
+   * SIN AXIOS
+   *
+   *
+   ***********/
+  // fetch("http://localhost:3000/api/products") //tarda un tiempo en sincronizarse: devuelve una promesa
+  //   .then((response) => {
+  //     //promesa y la guarda en una respuesta
+  //     // response
+  //     //   .json() //json tambien es asincrono
+  //     //   .then((data) => {
+  //     //     console.log(data);
+  //     //   });
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //   });
+
+  /*******
+   *
+   * CON AXIOS
+   *
+   *
+   ***********/
+
+  axios.get("http://localhost:3000/api/products").then((response) => {
+    console.log(response);
+  });
+
   return (
     <>
       <title>Ecommerce</title>
