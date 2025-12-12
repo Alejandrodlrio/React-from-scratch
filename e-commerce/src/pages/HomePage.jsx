@@ -3,7 +3,7 @@ import "./HomePage.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export function HomePage() {
+export function HomePage({ cart }) {
   /*******
    *
    * SIN AXIOS
@@ -33,13 +33,10 @@ export function HomePage() {
 
   // Se ejecuta una sola vez si no hay cambios
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+
   useEffect(() => {
     axios.get("/api/products").then((response) => {
       setProducts(response.data);
-    });
-    axios.get("/api/cart-items").then((response) => {
-      setCart(response.data);
     });
   }, []); // [] sin dependencias.
 
