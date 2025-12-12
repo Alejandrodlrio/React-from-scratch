@@ -1,6 +1,5 @@
 import { Header } from "../components/headerComponent";
 import "./HomePage.css";
-import { products } from "../starting-code/data/products";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -46,6 +45,7 @@ export function HomePage() {
       <Header />
       <div className="home-page">
         <div className="products-grid">
+          {/* products traidos desde el backend y no desde un arrray local */}
           {products.map((product) => {
             return (
               <div key={product.id} className="product-container">
