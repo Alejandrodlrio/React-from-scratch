@@ -1,23 +1,26 @@
 import "./CheckoutPage.css";
 import "./Checkout-header.css";
+import { Link } from "react-router";
+import { formatMoney } from "../utils/money";
 export function CheckoutPage({ cart }) {
+
   return (
     <>
       <title>checkout</title>
       <div className="checkout-header">
         <div className="header-content">
           <div className="checkout-header-left-section">
-            <a href="/">
+            <Link to="/">
               <img className="logo" src="images/logo.png" />
               <img className="mobile-logo" src="images/mobile-logo.png" />
-            </a>
+            </Link>
           </div>
 
           <div className="checkout-header-middle-section">
             Checkout (
-            <a className="return-to-home-link" href="/">
+            <Link className="return-to-home-link" to="/">
               3 items
-            </a>
+            </Link>
             )
           </div>
 
@@ -38,6 +41,7 @@ export function CheckoutPage({ cart }) {
               </div>
 
               <div className="cart-item-details-grid">
+                {cart.map((item) => ()}
                 <img
                   className="product-image"
                   src="images/products/athletic-cotton-socks-6-pairs.jpg"
