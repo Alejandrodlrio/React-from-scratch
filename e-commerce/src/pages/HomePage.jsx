@@ -1,4 +1,5 @@
 import { Header } from "../components/headerComponent";
+import { formatMoney } from "../utils/money";
 import "./HomePage.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -38,7 +39,7 @@ export function HomePage({ cart }) {
     axios.get("/api/products").then((response) => {
       setProducts(response.data);
     });
-  }, []); // [] sin dependencias.
+  }, []); // [] sin dependencias. OJO, SI NO LO PONEMOS SE ACTUALIZA SIN PARAR.
 
   return (
     <>
@@ -71,7 +72,7 @@ export function HomePage({ cart }) {
                 </div>
 
                 <div className="product-price">
-                  ${(product.priceCents / 100).toFixed(2)}
+                  {formatMoney(product.priceCents)}
                 </div>
 
                 <div className="product-quantity-container">
