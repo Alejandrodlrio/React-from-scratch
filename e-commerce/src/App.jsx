@@ -3,16 +3,20 @@ import "./App.css";
 import axios from "axios";
 import { HomePage } from "./pages/home/HomePage";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
-import { OrdersPage } from "./pages/OrdersPage";
+import { OrdersPage } from "./pages/orders/OrdersPage";
 import { TrackingPage } from "./pages/TrackingPage";
 import { useEffect, useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    axios.get("/api/cart-items?expand=product").then((response) => {
+    const fetchAppData = async () => {
+      const response = await axios.get("/api/cart-items?expand=product");
       setCart(response.data);
-    });
+    };
+
+    //llamamos a la funcion asincrona:
+    fetchAppData();
   }, []);
 
   return (

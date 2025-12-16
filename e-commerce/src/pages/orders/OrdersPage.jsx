@@ -1,9 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
-import { Header } from "../components/headerComponent";
+import { Header } from "../../components/headerComponent";
 import "./OrdersPage.css";
 import axios from "axios";
 import dayjs from "dayjs";
-import { formatMoney } from "../utils/money";
+import { formatMoney } from "../../utils/money";
 
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
@@ -22,7 +22,6 @@ export function OrdersPage({ cart }) {
 
         <div className="orders-grid">
           {orders.map((item) => {
-            console.log(item.id);
             return (
               <div key={item.id} className="order-container">
                 <div className="order-header">
