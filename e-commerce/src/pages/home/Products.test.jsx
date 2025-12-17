@@ -1,4 +1,4 @@
-import { it, expect, describe, vi } from "vitest";
+import { it, expect, describe, vi, beforeEach } from "vitest";
 import { Product } from "./Products";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -9,18 +9,28 @@ vi.mock("axios");
 // INTEGRATION TEST
 // test suite:
 describe("Product Component", () => {
-  const product = {
-    id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-    image: "images/products/athletic-cotton-socks-6-pairs.jpg",
-    name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
-    rating: {
-      stars: 4.5,
-      count: 87,
-    },
-    priceCents: 1090,
-    keywords: ["socks", "sports", "apparel"],
-  };
-  const loadCart = vi.fn();
+  let product;
+  let loadCart;
+  //  OJO-> TEST hook:
+  //     beforeEach();
+  //     afterEach();
+  //     beforeAll();
+  //     afterAll();
+  beforeEach(() => {
+    product = {
+      id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+      image: "images/products/athletic-cotton-socks-6-pairs.jpg",
+      name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
+      rating: {
+        stars: 4.5,
+        count: 87,
+      },
+      priceCents: 1090,
+      keywords: ["socks", "sports", "apparel"],
+    };
+    loadCart = vi.fn();
+  });
+
   it("displays the product details correctly", () => {
     render(<Product product={product} loadCart={loadCart} />);
 
