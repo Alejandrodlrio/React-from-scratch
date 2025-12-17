@@ -1,7 +1,8 @@
 import { it, expect, describe } from "vitest";
 import { formatMoney } from "./money";
 
-//test suite
+// UNIT TEST
+// test suite:
 describe("formatMoney", () => {
   it("formats 1999 cents as $19.99", () => {
     expect(formatMoney(19999999999)).toBe("$199999999.99");
