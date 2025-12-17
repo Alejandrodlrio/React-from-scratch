@@ -9,9 +9,11 @@ export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/orders?expand=products").then((response) => {
+    const fetchOrders = async () => {
+      const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
-    });
+    };
+    fetchOrders();
   }, []);
   return (
     <>
@@ -44,7 +46,6 @@ export function OrdersPage({ cart }) {
 
                 <div className="order-details-grid">
                   {item.products.map((orderProduct) => {
-                    console.log(orderProduct);
                     return (
                       <Fragment key={orderProduct.productId}>
                         <div className="product-image-container">

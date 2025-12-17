@@ -4,7 +4,7 @@ import "./HomePage.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export function HomePage({ cart }) {
+export function HomePage({ cart, loadCart }) {
   /*******
    *
    * SIN AXIOS
@@ -34,7 +34,6 @@ export function HomePage({ cart }) {
 
   // Se ejecuta una sola vez si no hay cambios
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     const getHomeData = async () => {
       const response = await axios.get("/api/products");
@@ -49,7 +48,7 @@ export function HomePage({ cart }) {
       <title>Ecommerce</title>
       <Header cart={cart} />
       <div className="home-page">
-        <ProductsGrid products={products} />
+        <ProductsGrid products={products} loadCart={loadCart} />
       </div>
     </>
   );

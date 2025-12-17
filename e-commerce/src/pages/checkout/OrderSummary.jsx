@@ -2,7 +2,8 @@ import dayjs from "dayjs";
 import { formatMoney } from "../../utils/money";
 import { DeliveryOptions } from "./DeliveryOptions";
 
-export function OrderSummary({ deliveryOptions, cart }) {
+export function OrderSummary({ cart, deliveryOptions }) {
+  console.log(cart);
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 &&
@@ -12,7 +13,7 @@ export function OrderSummary({ deliveryOptions, cart }) {
               return deliveryOption.id === item.deliveryOptionId;
             }
           );
-          console.log(item);
+          // console.log(item);
           return (
             <div key={item.id} className="cart-item-container">
               <div className="delivery-date">
