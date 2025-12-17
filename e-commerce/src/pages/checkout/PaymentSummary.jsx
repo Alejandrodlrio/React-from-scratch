@@ -10,7 +10,7 @@ export function PaymentSummary({ paymentSummary, loadCart }) {
     await loadCart();
     navigate("/orders");
   };
-  console.log(paymentSummary.totalItems);
+
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">Payment Summary</div>
